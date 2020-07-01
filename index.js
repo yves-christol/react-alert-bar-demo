@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import AlertBar from './AlertBar';
-import { alertService } from '/alertBar'
+import { alertService } from './AlertBar'
 
 function sendMessage() {
     // send message to subscribers via observable subject
