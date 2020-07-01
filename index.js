@@ -16,9 +16,9 @@ function clearMessages() {
 render( 
   <div>
     <h1>AlertBar demo</h1>
-    <AlertBar />
     <button onClick={sendMessage} className="btn btn-primary mr-2">Send Message</button>
     <button onClick={clearMessages} className="btn btn-secondary">Clear Messages</button>                
+    <AlertBar />
   </div>,
   document.getElementById('root')
 );
