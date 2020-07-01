@@ -1,8 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { Subject } from 'rxjs';
-
+import Snackbar from '@material-ui/core/Snackbar';
+import Button from '@material-ui/core/Button';
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
+import { makeStyles } from '@material-ui/core/styles';
 
 const subject = new Subject();
+
+function Alert(props) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    width: '100%',
+    '& > * + *': {
+      marginTop: theme.spacing(2),
+    },
+  },
+}));
 
 export const alertService = {
     sendMessage: message => subject.next({ text: message }),
@@ -31,15 +48,13 @@ const AlertBar = () => {
 
     return (
       <div className="jumbotron">
-          <div className="container text-center">
-              <div className="row">
-                  <div className="col-sm-8 offset-sm-2">
-                      {messages.map((message, index) =>
-                          <div key={index} className="alert alert-success">{message.text}</div>
-                      )}
-                  </div>
-              </div>
-          </div>
+        {messages.map((message, index) =>
+          <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+            <Alert onClose={handleClose} severity="success">
+              {message.text}
+            </Alert>
+          </Snackbar>
+        )}
       </div>
     );
 }
