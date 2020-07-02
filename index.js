@@ -1,24 +1,20 @@
 import React from 'react';
 import { render } from 'react-dom';
-import AlertBar from './AlertBar';
-import { alertService } from './AlertBar'
+import { SnackbarProvider } from 'notistack';
+import AlertComponent from './AlertComponent'
 
-function sendMessage() {
-    // send message to subscribers via observable subject
-    alertService.sendMessage('Message from Home Page Component to App Component!');
-}
-
-function clearMessages() {
-    // clear messages
-    alertService.clearMessages();
+function App() {
+  return (
+    <div>
+      <h1>AlertBar demo</h1>
+      <AlertComponent />
+    </div>
+  )
 }
 
 render( 
-  <div>
-    <h1>AlertBar demo</h1>
-    <button onClick={sendMessage} className="btn btn-primary mr-2">Send Message</button>
-    <button onClick={clearMessages} className="btn btn-secondary">Clear Messages</button>                
-    <AlertBar />
-  </div>,
+  <SnackbarProvider maxSnack={3}>
+      <App />
+  </SnackbarProvider>,
   document.getElementById('root')
 );
