@@ -6,7 +6,7 @@ import AlertComponent from './AlertComponent'
 function App() {
   return (
     <div>
-      <h1>AlertBar demo</h1>
+      <h1>Alert provider demo</h1>
       <AlertComponent />
     </div>
   )
