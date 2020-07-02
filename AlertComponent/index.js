@@ -11,10 +11,10 @@ const AlertComponent = () => {
 
   return (
     <div>
-      <Button onClick={() => handleClick('success')}>Success snackbar</Button>
-      <Button onClick={() => handleClick('error')}>Error snackbar</Button>
-      <Button onClick={() => handleClick('warning')}>Warning snackbar</Button>
-      <Button onClick={() => handleClick('info')}>Info snackbar</Button>
+      <Button onClick={() => handleClick('success')}>Success </Button>
+      <Button onClick={() => handleClick('error')}>Error </Button>
+      <Button onClick={() => handleClick('warning')}>Warning </Button>
+      <Button onClick={() => handleClick('info')}>Info </Button>
     </div>
   );
 }
