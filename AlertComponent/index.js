@@ -15,6 +15,7 @@ const AlertComponent = () => {
       <Button onClick={() => handleClick('error')}>Error </Button>
       <Button onClick={() => handleClick('warning')}>Warning </Button>
       <Button onClick={() => handleClick('info')}>Info </Button>
+      <Button onClick={() => handleClick('')}>Standard </Button>
     </div>
   );
 }
